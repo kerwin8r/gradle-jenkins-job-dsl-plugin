@@ -14,7 +14,7 @@ apply plugin: 'com.gradle.plugin-publish'
 
 dependencies {
     implementation localGroovy()
-    implementation 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
+    implementation 'com.netflix.nebula:gradle-extra-configurations-plugin:7.0.0'
 
     testImplementation("org.spockframework:spock-core:${versions.spock}") {
         exclude module: 'groovy-all'
