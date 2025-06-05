@@ -26,7 +26,7 @@ subprojects {
     apply plugin: 'nebula.maven-nebula-publish'
     apply plugin: 'nebula.javadoc-jar'
     apply plugin: 'nebula.source-jar'
-    apply from: "${rootDir}/gradle/bintrayUpload.gradle"
+    //apply from: "${rootDir}/gradle/bintrayUpload.gradle"
 
     repositories {
         maven { url 'http://repo.jenkins-ci.org/public' }
