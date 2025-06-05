@@ -1,6 +1,31 @@
 
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'com.gradle.plugin-publish'
 
+
+gradlePlugin {
+  plugins {
+    myPlugin {
+      id = 'myPluginId'
+      implementationClass = 'my.plugin.Implementation'
+    }
+  }
+}
+
+pluginBundle {
+  website = 'https://github.com/user/gradle-plugin-repo'
+  vcsUrl = 'https://github.com/user/gradle-plugin-repo'
+  description = 'Plugin description'
+
+  plugins {
+    myPlugin {
+      displayName = 'Gradle Plugin'
+    }
+  }
+}
+
+
+/*
 bintray {
     if (project.hasProperty('bintrayUser')) {
         user = project.property('bintrayUser')
@@ -28,3 +53,4 @@ bintray {
         }
     }
 }
+*/
