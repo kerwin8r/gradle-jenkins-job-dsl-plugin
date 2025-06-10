@@ -2,6 +2,7 @@
 buildscript {
     repositories {
         maven { url 'https://repo.jenkins-ci.org/public' }
+        mavenCentral()
     }
     dependencies {
         classpath 'com.netflix.nebula:nebula-publishing-plugin:13.6.1'
@@ -30,6 +31,7 @@ subprojects {
 
     repositories {
         maven { url 'https://repo.jenkins-ci.org/public' }
+        mavenCentral()
     }
 
     sourceCompatibility = '1.8'
