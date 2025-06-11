@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:17.33.0'
+        classpath 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:17.3.3'
         classpath 'com.netflix.nebula:nebula-release-plugin:19.0.10'
         //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
@@ -27,7 +27,7 @@ versions.spock = '1.1-groovy-2.4'
 subprojects {
     plugins {
       id("groovy")
-      id("com.netflix.nebula.maven-publish") version "17.33.0"
+      id("com.netflix.nebula.maven-publish") version "17.3.3"
       id("nebula.javadoc-jar")
       id("nebula.source-jar")
     }
