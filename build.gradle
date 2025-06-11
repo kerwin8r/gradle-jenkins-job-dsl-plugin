@@ -1,6 +1,7 @@
 
 buildscript {
     repositories {
+        gradlePluginPortal()
         maven { url 'https://repo.jenkins-ci.org/public' }
         mavenCentral()
     }
