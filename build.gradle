@@ -6,8 +6,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:18.4.0'
-        classpath 'com.netflix.nebula:nebula-release-plugin:17.2.2'
+        classpath 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:21.2.0'
+        classpath 'com.netflix.nebula:nebula-release-plugin:20.2.0'
         //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
