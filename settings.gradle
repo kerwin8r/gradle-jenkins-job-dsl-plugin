@@ -1,4 +1,10 @@
-
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
 rootProject.name = 'gradle-jenkins-job-dsl-plugin'
 
 include 'jenkins-job-dsl-test-support'
