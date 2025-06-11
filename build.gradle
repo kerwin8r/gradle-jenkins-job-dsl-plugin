@@ -6,16 +6,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        implementation 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:17.3.3'
-        implementation 'com.netflix.nebula:nebula-release-plugin:19.0.10'
+        classpath 'com.netflix.nebula.maven-publish:com.netflix.nebula.maven-publish.gradle.plugin:17.3.3'
+        classpath 'com.netflix.nebula:nebula-release-plugin:19.0.10'
         //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
 
-plugins {
-  id("com.netflix.nebula.release") version "19.0.10"
-  id("com.netflix.nebula.maven-publish") version "17.3.3"
-}
+apply plugin: 'nebula.nebula-release'
+apply plugin: 'nebula.maven-publish'
 
 ext {
     versions = [:]
@@ -27,19 +25,15 @@ versions.groovy = '2.4.11'
 versions.spock = '1.1-groovy-2.4'
 
 subprojects {
-    plugins {
-      id("groovy")
-      id("com.netflix.nebula.maven-publish") version "17.3.3"
-      id("nebula.javadoc-jar")
-      id("nebula.source-jar")
-    }
-    //apply plugin: 'groovy'
-    //apply plugin: 'nebula.maven-nebula-publish'
-    //apply plugin: 'nebula.javadoc-jar'
-    //apply plugin: 'nebula.source-jar'
+
+    apply plugin: 'groovy'
+    apply plugin: 'nebula.maven-publish'
+    apply plugin: 'nebula.javadoc-jar'
+    apply plugin: 'nebula.source-jar'
     //apply from: "${rootDir}/gradle/bintrayUpload.gradle"
 
     repositories {
+        gradlePluginPortal()
         maven { url 'https://repo.jenkins-ci.org/public' }
         mavenCentral()
     }
