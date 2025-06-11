@@ -28,7 +28,7 @@ class JobDslPlugin implements Plugin<Project> {
         project.apply plugin: 'nebula.provided-base'
 
         def extension = project.extensions.create('jobDsl', JobDslPluginExtension)
-        extension.version Versions.jobDsl
+        extension.archiveversion Versions.jobDsl
 
         configureDependencies(project)
 
