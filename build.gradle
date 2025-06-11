@@ -20,7 +20,9 @@ versions.jobDsl = '1.76'
 versions.groovy = '2.4.11'
 versions.spock = '1.1-groovy-2.4'
 
-apply plugin: 'nebula.nebula-release'
+plugins {
+  id("com.netflix.nebula.release") version "19.0.10"
+}
 
 subprojects {
     apply plugin: 'groovy'
