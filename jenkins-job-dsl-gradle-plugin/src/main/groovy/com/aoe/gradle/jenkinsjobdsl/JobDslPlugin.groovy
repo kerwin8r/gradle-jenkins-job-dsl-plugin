@@ -27,8 +27,8 @@ class JobDslPlugin implements Plugin<Project> {
         project.apply plugin: 'groovy'
         project.apply plugin: 'nebula.provided-base'
 
-        def extension = project.extensions.create('jobDsl', JobDslPluginExtension)
-        extension.archiveversion Versions.jobDsl
+        def extension = project.archiveextensions.create('jobDsl', JobDslPluginExtension)
+        extension.version Versions.jobDsl
 
         configureDependencies(project)
 
@@ -56,11 +56,11 @@ class JobDslPlugin implements Plugin<Project> {
             def extension = proj.extensions.getByType(JobDslPluginExtension)
 
             proj.dependencies {
-                provided "org.jenkins-ci.plugins:job-dsl-core:${extension.archiveversion}"
+                provided "org.jenkins-ci.plugins:job-dsl-core:${extension.version}"
 
                 // Sadly because of the .hpi or .jpi pom packages we have to redundantly define the correct job-dsl deps
-                jobDslTestRuntime "org.jenkins-ci.plugins:job-dsl:${extension.archiveversion}@jar"
-                jobDslTestRuntime "org.jenkins-ci.plugins:job-dsl:${extension.archiveversion}"
+                jobDslTestRuntime "org.jenkins-ci.plugins:job-dsl:${extension.version}@jar"
+                jobDslTestRuntime "org.jenkins-ci.plugins:job-dsl:${extension.version}"
                 jobDslTestRuntime 'org.jenkins-ci.plugins:structs:1.6@jar'
                 jobDslTestRuntime 'org.jenkins-ci.plugins:cloudbees-folder:6.0.4@jar'
             }
