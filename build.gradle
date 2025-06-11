@@ -12,7 +12,7 @@ buildscript {
     }
 }
 
-apply plugin: 'nebula.nebula-release'
+apply plugin: 'com.netflix.nebula.release'
 apply plugin: 'nebula.maven-publish'
 
 ext {
